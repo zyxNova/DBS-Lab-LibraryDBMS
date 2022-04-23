@@ -1,4 +1,4 @@
-#!/Users/particle/Desktop/大二下/数据库系统/Lab/LibDBMS/Lib3/env/bin/python3
+#!/usr/bin/env python3
 # Copyright (c) 2005-2012 Stephen John Machin, Lingfo Pty Ltd
 # This script is part of the xlrd package, which is released under a
 # BSD-style licence.
