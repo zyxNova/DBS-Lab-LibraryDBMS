@@ -103,6 +103,10 @@ def bookManage():
 @login_required
 def deleteBook(book_id):
     book = Book.query.get_or_404(book_id)
+    borrow = db.session.query(Borrow).filter(Borrow.book_id == book_id).all()
+    if borrow:
+        for brow in borrow:
+            db.session.delete(brow)
     db.session.delete(book)
     db.session.commit()
     flash('Book deleted.')
@@ -233,6 +237,10 @@ def edit(card_id):
 @login_required
 def delete(card_id):
     card = Card.query.get_or_404(card_id)
+    borrow = db.session.query(Borrow).filter(Borrow.card_id == card_id).all()
+    if borrow:
+        for brow in borrow:
+            db.session.delete(brow)
     db.session.delete(card)
     db.session.commit()
     flash('Card deleted.')
